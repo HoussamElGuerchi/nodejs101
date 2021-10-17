@@ -3,8 +3,6 @@ const fs = require("fs");
 const url = require("url");
 
 http.createServer((req, res) => {
-    console.log("Listening on port 8800");
-
     const query = url.parse(req.url, true);
     const filename = (query.pathname === "/") ? "./index.html" : `./pages${query.path}.html`;
 
